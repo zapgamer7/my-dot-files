@@ -109,6 +109,7 @@ lua << EOF
 require("mason").setup()
 EOF
 
-luafile /home/cauan/.config/nvim/lua/lsp/lspZeroCnf.lua
-luafile /home/cauan/.config/nvim/lua/lsp/luaLsp/lsplua.lua
-luafile /home/cauan/.config/nvim/lua/lsp/luaLsp/tsserver.lua
+luafile ~/.config/nvim/lua/lsp/lspZeroCnf.lua
+luafile ~/.config/nvim/lua/lsp/luaLsp/lsplua.lua
+luafile ~/.config/nvim/lua/lsp/luaLsp/tsserver.lua
+luafile ~/.config/nvim/lua/lsp/luaLsp/jdts.lua
