@@ -1,1 +1,1 @@
-require('lspconfig').vtsls.setup({})
+require('lspconfig').ts_ls.setup({})

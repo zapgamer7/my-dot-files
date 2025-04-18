@@ -3,7 +3,7 @@ Plug 'sainnhe/sonokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -18,6 +18,9 @@ Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v4.x'}
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
+
+" Oil
+Plug 'stevearc/oil.nvim'
 
 call plug#end()
 
@@ -51,7 +54,7 @@ filetype plugin on   " Load the plugin file for the file type, if any
 filetype indent on   " Load the indent file for the file type, if any
 
 "remap
-nnoremap <leader>w <cmd>wq<cr> 
+nnoremap <leader>w <cmd>w<cr> 
 
 nmap ty :bn<CR>
 nmap tr :bp<CR>
@@ -61,6 +64,9 @@ nmap th :split<CR>
 nmap tv :vsplit<CR>
 
 nmap tt :q<CR>
+
+nmap <space>cd :cd %:p:h<CR>
+nmap <F5> :LspZeroFormat<CR>
 "auto CMD
 "
 function! HighlightWordUnderCursor()
@@ -107,9 +113,12 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 lua << EOF
 require("mason").setup()
+require("oil").setup()
 EOF
 
 luafile ~/.config/nvim/lua/lsp/lspZeroCnf.lua
-luafile ~/.config/nvim/lua/lsp/luaLsp/lsplua.lua
 luafile ~/.config/nvim/lua/lsp/luaLsp/tsserver.lua
 luafile ~/.config/nvim/lua/lsp/luaLsp/jdts.lua
+luafile ~/.config/nvim/lua/lsp/luaLsp/css.lua
+luafile ~/.config/nvim/lua/lsp/luaLsp/emmetls.lua
+luafile ~/.config/nvim/lua/lsp/luaLsp/clangd.lua
